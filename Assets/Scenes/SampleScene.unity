@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 1848339722}
   - component: {fileID: 1848339721}
   - component: {fileID: 1848339720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: platform
   m_Icon: {fileID: 0}
@@ -325,10 +325,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1200726332, guid: b0cdfded95c7da54aae98abc8863f45b, type: 3}
-      propertyPath: playerJump
-      value: 35
-      objectReference: {fileID: 0}
     - target: {fileID: 2828448239096449820, guid: b0cdfded95c7da54aae98abc8863f45b,
         type: 3}
       propertyPath: m_Name
