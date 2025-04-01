@@ -206,7 +206,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 7
+  m_Mass: 8
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -256,4 +256,4 @@ MonoBehaviour:
   animator: {fileID: 639395056851027027}
   boxCol: {fileID: 1200726328}
   playerSpeed: 5
-  playerJump: 65
+  playerJump: 75
