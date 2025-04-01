@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed;
     public float playerJump;
 
+    private bool isGrounded = false;
 
     private void Awake()
     {
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
         transform.localScale = scale;
 
        
-        if (vertical > 0)                                                              //jump
+        if (vertical > 0 && isGrounded)                                                              //jump
         {
             animator.SetBool("Jump", true);
 
@@ -82,11 +83,25 @@ public class PlayerController : MonoBehaviour
         transform.position = position;
 
         //vert- jump
-        if (vertical > 0)
-        {
-            rb2d.AddForce(new Vector2(0f, playerJump), ForceMode2D.Force);                //Impluse to apply sudden force to char
+        if (vertical > 0 && isGrounded)
+        { 
+            rb2d.AddForce(new Vector2(0f, playerJump), ForceMode2D.Force);                
         }
 
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if(other.transform.tag == "platform")
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if(other.transform.tag == "platform")
+        {  isGrounded = false;}
     }
 
     public void Crouch(bool crouch)

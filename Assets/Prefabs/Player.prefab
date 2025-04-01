@@ -171,4 +171,4 @@ MonoBehaviour:
   animator: {fileID: 639395056851027027}
   boxCol: {fileID: 1200726328}
   playerSpeed: 5
-  playerJump: 30
+  playerJump: 35
