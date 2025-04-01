@@ -116,13 +116,16 @@ public class PlayerController : MonoBehaviour
 
             boxCol.size = new Vector2(sizeX, sizeY);
             boxCol.offset = new Vector2(offX, offY);
+            
         }
         else
         {
             boxCol.size = boxColInitSize;
             boxCol.offset = boxColInitOffset;
+            
         }
         animator.SetBool("Crouch", crouch);
     }
+    
 
 }
