@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         transform.localScale = scale;
 
        
-        if (vertical > 0 && isGrounded)                                                              //jump
+        if (vertical > 0 && isGrounded == true )                                                              //jump
         {
             animator.SetBool("Jump", true);
 
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
         transform.position = position;
 
         //vert- jump
-        if (vertical > 0 && isGrounded)
+        if (vertical > 0 && isGrounded == true)
         { 
             rb2d.AddForce(new Vector2(0f, playerJump), ForceMode2D.Force);                
         }
