@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private BoxCollider2D boxCol;
 
+    public ScoreController scoreController;
+
     private Vector2 boxColInitSize;
     private Vector2 boxColInitOffset;
 
@@ -126,6 +128,10 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetBool("Crouch", crouch);
     }
-    
 
+   public void PickUpKey()
+    {
+        Debug.Log("Player Picked up the key! ");
+        scoreController.IncreaseScore(10);
+    }
 }
