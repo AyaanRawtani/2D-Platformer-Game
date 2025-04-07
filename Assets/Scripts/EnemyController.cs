@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
     {
         if(raycastHit.collider != false)
         {
-            Debug.Log("Hitting ground");
+           // Debug.Log("Hitting ground");
             if(isFacingRight)
             {
                 rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not hitting");
+            //Debug.Log("Not hitting");
             isFacingRight = !isFacingRight;
             transform.localScale = new Vector2(-transform.localScale.x, 1f);
         }
