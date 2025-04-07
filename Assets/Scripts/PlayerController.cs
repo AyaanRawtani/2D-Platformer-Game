@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = false;
 
+    public PlayerDeath playerDeath;
     private void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -133,5 +134,12 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Player Picked up the key! ");
         scoreController.IncreaseScore(10);
+    }
+
+   public void KillPlayer()
+    {
+        Debug.Log("Player killed by enemy");
+        playerDeath.DecreaseLives(1);
+        
     }
 }
