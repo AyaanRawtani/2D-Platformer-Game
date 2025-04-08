@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCol;
 
     public ScoreController scoreController;
+    public PlayerDeath playerDeath;
+    public GameOverController gameOverController;
+
 
     private Vector2 boxColInitSize;
     private Vector2 boxColInitOffset;
@@ -22,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = false;
 
-    public PlayerDeath playerDeath;
+    
     private void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -140,6 +143,11 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Player killed by enemy");
         playerDeath.DecreaseLives(1);
+        if(playerDeath.getLives() <= 0)
+        {
+            gameOverController.PlayerDied();
+            this.enabled = false;
+        }
         
     }
 }

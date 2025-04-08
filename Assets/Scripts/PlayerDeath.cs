@@ -24,7 +24,7 @@ public class PlayerDeath : MonoBehaviour
     {
         lives -= decrement;
         RefreshLives();
-        Restart();
+        
     }
 
     private void RefreshLives()
@@ -33,12 +33,11 @@ public class PlayerDeath : MonoBehaviour
     }
 
 
-    void Restart()
+  
+
+    public int getLives()
     {
-       if (lives <= 0)
-       { 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-       }
+        return lives;
     }
 
 }
