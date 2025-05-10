@@ -831,10 +831,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level1: Level1
   Levels:
+  - Lobby
   - Level1
   - Level2
   - Level3
   - Level4
+  levelCompleted: {fileID: 119695644525256132, guid: 9e2aa328dd02e294e9b01f7344163611,
+    type: 3}
 --- !u!4 &832328990
 Transform:
   m_ObjectHideFlags: 0

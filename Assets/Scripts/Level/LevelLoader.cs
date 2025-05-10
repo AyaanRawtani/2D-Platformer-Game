@@ -34,6 +34,13 @@ public class LevelLoader : MonoBehaviour
             case LevelStatus.Completed:
                 SceneManager.LoadScene(LevelName);
                 break;
+
+            case LevelStatus.Lobby:
+                SceneManager.LoadScene(LevelName);
+                break;
+
+
+
         }
         //SceneManager.LoadScene(LevelName);
     }
