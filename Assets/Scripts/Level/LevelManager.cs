@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     public string[] Levels;
     public static LevelManager Instance { get { return instance; } }
 
-    public LevelCompleteUI levelCompleted;
+    
 
     private void Awake()
     {
@@ -41,10 +41,7 @@ public class LevelManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         LevelManager.Instance.SetLevelStatus(currentScene.name, LevelStatus.Completed);
 
-        if (LevelManager.Instance.GetLevelStatus(currentScene.name) == LevelStatus.Completed)
-        {
-            levelCompleted.levelComplete();
-        }
+        
         //int nextSceneIndex = currentScene.buildIndex + 1;
         //Scene nextScene = SceneManager.GetSceneByBuildIndex(nextSceneIndex);
         //LevelManager.Instance.SetLevelStatus(nextScene.name, LevelStatus.Unlocked); 
