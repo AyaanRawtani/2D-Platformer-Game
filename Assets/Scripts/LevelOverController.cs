@@ -17,6 +17,7 @@ public class LevelOverController : MonoBehaviour
             //levelCompleted.levelComplete();
             Debug.Log("Level Over by player");
             LevelManager.Instance.MarkCurrentLevelComplete();
+            SoundManager.Instance.Play(Sounds.LevelComplete);
            //levelCompleted.levelComplete();
         }
     }
