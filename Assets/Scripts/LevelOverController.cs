@@ -14,11 +14,9 @@ public class LevelOverController : MonoBehaviour
        // if(collision.gameObject.CompareTag("Player"))
        if(collision.gameObject.GetComponent<PlayerController>() != null)
         {
-            //levelCompleted.levelComplete();
-            Debug.Log("Level Over by player");
-            LevelManager.Instance.MarkCurrentLevelComplete();
             SoundManager.Instance.Play(Sounds.LevelComplete);
-           //levelCompleted.levelComplete();
+            Debug.Log("Level Over by player");
+            LevelManager.Instance.MarkCurrentLevelComplete();             
         }
     }
 }
