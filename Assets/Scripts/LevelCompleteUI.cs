@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameOverController : MonoBehaviour
+public class LevelCompleteUI : MonoBehaviour
 {
     public Button buttonRestart;
     public Button buttonLobby;
-    
+
 
     private void Awake()
     {
@@ -22,14 +22,16 @@ public class GameOverController : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void PlayerDied()
+    public void Restart()
     {
-        SoundManager.Instance.PlayBGMusic(Sounds.PlayerDeath);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LevelComplete()
+    {
+        
         gameObject.SetActive(true);
     }
 
-    public void Restart()
-    {
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+   
 }
