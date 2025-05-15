@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCol;
 
     public ScoreController scoreController;
+    public PlayerDeath playerDeath;
+    public GameOverController gameOverController;
+   // public LevelOverController levelOverController;
+
 
     private Vector2 boxColInitSize;
     private Vector2 boxColInitOffset;
@@ -22,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = false;
 
+    
     private void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -134,4 +139,18 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player Picked up the key! ");
         scoreController.IncreaseScore(10);
     }
+
+   public void KillPlayer()
+    {
+        Debug.Log("Player killed by enemy");
+        playerDeath.DecreaseLives(1);
+        if(playerDeath.getLives() <= 0)
+        {
+            gameOverController.PlayerDied();
+            this.enabled = false;
+        }
+        
+    }
+
+  
 }

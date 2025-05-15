@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 630656933}
   - component: {fileID: 630656932}
-  - component: {fileID: 630656931}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -76,14 +75,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &630656931
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630656930}
-  m_Enabled: 1
 --- !u!1 &2828448239096449820
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +197,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 7
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -255,5 +246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 639395056851027027}
   boxCol: {fileID: 1200726328}
+  scoreController: {fileID: 0}
+  playerDeath: {fileID: 0}
+  gameOverController: {fileID: 0}
   playerSpeed: 5
-  playerJump: 225
+  playerJump: 300
